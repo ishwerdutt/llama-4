@@ -53,3 +53,37 @@ The best tokenization method depends on the specific needs of a Large Language M
 - Adaptive Tokenization – Dynamically adjusts based on context, improving performance in diverse datasets.
 
 For LLMs, subword tokenization is often preferred because it reduces out-of-vocabulary issues while keeping sequences manageable. Want to explore how different models use tokenization? 
+
+# Best Tokenizer Structure: Subword Tokenization
+Subword tokenization strikes a balance between vocabulary size, efficiency, and handling rare or out-of-vocabulary words. It is commonly implemented using methods like Byte Pair Encoding (BPE), WordPiece, or SentencePiece.
+
+**Key Features of Subword Tokenization:**
+- andles Rare Words:
+
+Breaks down rare or unknown words into smaller, meaningful subword units.
+Example: "unbelievable" → ["un", "believ", "able"].
+- Compact Vocabulary:
+
+Reduces the size of the vocabulary compared to word-level tokenization.
+Efficient for training and inference.
+Language-Agnostic:
+
+- Works well for languages with complex morphology (e.g., agglutinative languages like Finnish or Turkish).
+Balances Sequence Length:
+
+- Avoids excessively long sequences seen in character-level tokenization.
+Popular Subword Tokenization Methods:
+Byte Pair Encoding (BPE):
+
+- Merges the most frequent pairs of characters or subwords iteratively.
+Used in models like GPT and OpenAI's LLMs.
+WordPiece:
+
+- Similar to BPE but uses a probabilistic approach to merge subwords.
+Used in models like BERT.
+SentencePiece:
+
+- Operates directly on raw text (e.g., without requiring whitespace tokenization).
+Used in models like T5 and mBERT.
+Adaptive Tokenization (Emerging Approach):
+Adaptive tokenization dynamically adjusts based on the context or dataset. While less common, it is gaining traction for its ability to optimize performance across diverse datasets.
