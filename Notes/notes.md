@@ -87,3 +87,46 @@ SentencePiece:
 Used in models like T5 and mBERT.
 Adaptive Tokenization (Emerging Approach):
 Adaptive tokenization dynamically adjusts based on the context or dataset. While less common, it is gaining traction for its ability to optimize performance across diverse datasets.
+
+# BPE
+
+Byte Pair Encoding (BPE) is a tokenization algorithm used in Large Language Models (LLMs) to efficiently process text. Originally designed for text compression, it was later adapted for NLP tasks, including tokenizing words into subword units.
+How BPE Works:
+- Start with individual characters as tokens.
+- *Identify the most frequent adjacent character pairs in the dataset.*
+- Merge the most common pair into a new token.
+- Repeat the process until reaching a predefined vocabulary size.
+
+For example, if we have the words:
+- "hug", "pug", "pun", "bun", "hugs"
+
+BPE might merge "h" and "u" into "hu", then "hu" and "g" into "hug", forming subword units that help models handle rare words efficiently.
+BPE is widely used in models like GPT-2, GPT-3, RoBERTa, and BART. You can explore more details here.
+
+# Vector Embeddings
+
+- is just an array of numbers
+
+each token in the vocab will have its own array of numbers.
+"car" = [0.84, 0.36, 0.01, -0.65]
+'grass' = [0.01, 0.088, -0.32, .94]
+
+in reality , embeddings are very high dimensional vectors.Each element in the vector is capturing some of the characteristics. e.g in above example quicness, aliveness, greeness
+
+similar words(words with similar meaning) will be closed in multidimensional space.
+
+# How llms use vector embeddinsgs?
+
+"The car is fast" 
+      | 
+      | tokenization
+      |
+"The" "car" "is" "fast"   <====== Tokenized sentence
+       | 
+       |  Vector embeddigs
+       |
+       |
+"The"  → [0.12, -0.45, 0.78, 0.34]    
+"car"  → [0.67, -0.89, 0.23, -0.56]    <===== vector embeddigs
+"is"   → [-0.34, 0.56, -0.12, 0.89]
+"fast" → [0.89, -0.23, 0.45, -0.67]
