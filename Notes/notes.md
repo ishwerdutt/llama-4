@@ -118,9 +118,7 @@ similar words(words with similar meaning) will be closed in multidimensional spa
 # How llms use vector embeddinsgs?
 
 "The car is fast" 
-      | 
-      | tokenization
-      |
+      &#8595
 "The" "car" "is" "fast"   <====== Tokenized sentence
        | 
        |  Vector embeddigs
