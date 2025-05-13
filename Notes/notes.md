@@ -127,6 +127,6 @@ similar words(words with similar meaning) will be closed in multidimensional spa
        |
        |
 "The"  → [0.12, -0.45, 0.78, 0.34]    
-"car"  → [0.67, -0.89, 0.23, -0.56]    <===== vector embeddigs
+"car"  → [0.67, -0.89, 0.23, -0.56]    
 "is"   → [-0.34, 0.56, -0.12, 0.89]
 "fast" → [0.89, -0.23, 0.45, -0.67]
